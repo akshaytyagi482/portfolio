@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,html{
+  height: 100%;
+  width: 100%;
+}
+body{
+  background-color: rgb(17 24 39);
+    color: rgb(255 255 255 / var(1));
+}
+@keyframes rotateme {
+  0%{
+    rotate: 0deg;
+  }
+  100%{
+     rotate: 360deg;
+  }
+}
+.setting{
+  filter: invert(1);
+  animation-name: rotateme;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotateme2 {
+  0%{
+    rotate: 0deg;
+  }
+  100%{
+     rotate: 360deg;
+  }
+}
+@keyframes hoverig {
+  0%{
+    transform: scale(1);
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: scale(1.1);
+    transform: translateY(0);
+  }
+}
+.animesan{
+ animation: rotateme2 20s linear infinite,hoverig 5s linear infinite alternate;
+}
+.animesan2{
+  animation: hoverig 5s linear infinite alternate;
+  border-radius: 10%;
+  rotate: 10deg; 
+}
+.card:hover .butt{
+   transform: translateX(10px);
+   opacity: 1;
+   transition: all 0.5s ease;
+}
+.title{
+  backdrop-filter: blur(10px);
+}
+.wrapper {
+  margin-top: 2rem;
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+
+@keyframes scrollRight {
+  to {
+    right: -200px;
+  }
+}
+
+.itemLeft,
+.itemRight {
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  position: absolute;
+  animation-timing-function: linear;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+}
+
+.itemLeft {
+  left: max(calc(200px * 8), 100%);
+  animation-name: scrollLeft;
+}
+.item1 {
+  animation-delay: calc(30s / 8 * (8 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 8 * (8 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 8 * (8 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(30s / 8 * (8 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(30s / 8 * (8 - 5) * -1);
+}
+
+.item6 {
+  animation-delay: calc(30s / 8 * (8 - 6) * -1);
+}
+
+.item7 {
+  animation-delay: calc(30s / 8 * (8 - 7) * -1);
+}
+
+.item8 {
+  animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+.footer{
+  background-image: url("/bg/footer-bg.svg"),linear-gradient(153.86deg, #02494c, #016877 15.69%, #0d576d 48.9%, #004865 95.52%);;
+}
+.rondu{
+background: linear-gradient(45deg, rgb(245, 1, 220) 33%, rgb(4, 114, 136) 72%);
+}
