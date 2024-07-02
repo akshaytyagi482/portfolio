@@ -80,7 +80,7 @@ const Third = () => {
         <div className='py-5 w-full items-center md:overflow-x-hidden'>
           <motion.div style={{  x: isMobile ? 0 : x  }} className={`chu flex gap-4 ${isMobile ? 'flex-col w-full' : 'flex-nowrap w-max'}`}>
             {cards.map((card, index) => (
-              <div key={index} className="card transition-all max-md:mx-auto relative max-w-96 w-full flex flex-col min-h-80 hover:scale-105 rounded-lg bg-white overflow-hidden">
+               <div key={index} className="card rondu transition-all max-md:mx-auto relative max-w-96 w-full flex flex-col min-h-80 hover:scale-105 rounded-lg bg-white overflow-hidden">
                 <div className="relative w-full p-4 flex items-end text-4xl h-1/3">
                   {/* Background Image with Blur */}
                   <div className="absolute w-full inset-0 bg-cover bg-center filter blur-[5px]" style={{ backgroundImage: `url(${card.imageUrl})` }}></div>
@@ -91,7 +91,7 @@ const Third = () => {
                     {card.name}
                   </div>
                 </div>
-                <div className='w-full rondu text-white p-4 flex h-full flex-col justify-between text-xl'>
+                <div className='w-full text-white p-4 flex h-full flex-col justify-between text-xl'>
                   <div className='w-full'>{card.description}</div>
                   <a className='butt px-5 py-2 opacity-0 font-bold text-xl tracking-wider w-max border-2 border-blue-800 rounded-3xl hover:bg-blue-800 hover:text-white' href={card.projectlink}>Link</a>
                 </div>

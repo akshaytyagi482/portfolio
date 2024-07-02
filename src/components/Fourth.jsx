@@ -2,20 +2,22 @@
 import Image from "next/image"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import { useRef } from "react"
 const Fourth = () => {
+  const reff = useRef()
   useGSAP(()=>{
-    gsap.from('.headin',{
+    gsap.from(reff.current.children,{
         x:-100,
         opacity:0,
         stagger:0.5,
         scrollTrigger:{
-          trigger:".upe",
-          start:"top 50%",
+          trigger:reff.current,
+          start:"top 80%",
           end:"bottom 50%",
         }
     })},[])
   return (
-    <div className="relative upe min-h-full max-md:text-center flex gap-8 flex-col p-16 w-full">
+    <div ref={reff} className="relative min-h-full max-md:text-center flex gap-8 flex-col p-16 w-full">
       <Image className="absolute left-0 max-md:top-11 top-96 z-0" src={"/bg/pattern-l.svg"} height={150} width={150} />
       <Image className="absolute right-0 top-64 z-0" src={"/bg/pattern-r.svg"} height={300} width={300} />
         <div className="flex gap-4 flex-col">

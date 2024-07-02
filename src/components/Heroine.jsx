@@ -12,10 +12,10 @@ const Heroine = () => {
             <p className="hero">I <span><Typewriter words={["develop modern frontend UI","am a Frontend engineer","am a freelancer"]} loop={-1}/></span><span><Cursor/></span></p>
             </div>
             <div className="flex gap-5">
-              <a className="hero" href="http://" target="_blank" rel="noopener noreferrer"><Image src={"/linkdin.png"} height={40} width={40} /></a>
-              <a className="hero" href="http://" target="_blank" rel="noopener noreferrer"><Image className="rounded-full" src={"/github.png"} height={40} width={40} /></a>
+              <a className="hero" href="https://www.linkedin.com/in/akshay-kumar-bb0bbb184/" target="_blank" rel="noopener noreferrer"><Image src={"/linkdin.png"} height={40} width={40} /></a>
+              <a className="hero" href="https://github.com/akshaytyagi482" target="_blank" rel="noopener noreferrer"><Image className="rounded-full" src={"/github.png"} height={40} width={40} /></a>
             </div>
-            <a href="https://acrobat.adobe.com/id/urn:aaid:sc:AP:d43177e3-f475-4392-a259-3e3abf8b779c" target="blank" className="border-2 hero text-xl h-max w-max rounded-lg text-white hover:bg-white hover:text-black border-white p-3 px-5 text-center flex items-center justify-center bg-transparent">Resume</a>
+            <a href="https://docs.google.com/document/d/1kBqkQNclrHDQuCGwhVuRwF_2EPwZaj8n/edit?usp=sharing&ouid=110130709863583991650&rtpof=true&sd=true" target="blank" className="border-2 hero text-xl h-max w-max rounded-lg text-white hover:bg-white hover:text-black border-white p-3 px-5 text-center flex items-center justify-center bg-transparent">Resume</a>
             </div>
         </div>
         <div className="right max-md:w-full h-full relative w-1/2 max-md:px-0 px-8">
