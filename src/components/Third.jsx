@@ -4,13 +4,17 @@ import { useTransform,useScroll,motion} from 'framer-motion'
 import { useGSAP } from '@gsap/react'
 import gsap from "gsap"
 const Third = () => {
+  const [isMobile,setMobile] = useState(false)
   useGSAP(()=>{
-    gsap.from('.heading',{
+    const mm = gsap.matchMedia()
+    mm.add("(min-width: 684px)",()=>{
+
+      gsap.from('.heading',{
         x:-100,
         opacity:0,
         stagger:0.5,
         scrollTrigger:{
-          trigger:".up",
+          trigger:tagetref.current,
           start:"top 50%",
           end:"bottom 50%",
         }
@@ -19,20 +23,17 @@ const Third = () => {
       y:50,
       opacity:0,
       scrollTrigger:{
-        trigger:".up",
+        trigger:tagetref.current,
         start:"top 50%",
         end:"bottom 50%",
-    }})
+      }})
+      setMobile(false)
+    })
+    mm.add("(max-width: 683px)",()=>{
+      setMobile(true)
+    })
   },[])
-  const [isMobile, setIsMobile] = useState(false);
-  const updateMedia = () => {
-    setIsMobile(window.innerWidth <= 786);
-  };
-  useEffect(() => {
-    updateMedia();
-    window.addEventListener('resize', updateMedia);
-    return () => window.removeEventListener('resize', updateMedia);
-  }, []);
+  
   const cards = [
     {
       name: 'Sundown studio',

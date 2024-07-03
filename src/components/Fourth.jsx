@@ -6,22 +6,29 @@ import { useRef } from "react"
 const Fourth = () => {
   const reff = useRef()
   useGSAP(()=>{
-    gsap.from(reff.current.children,{
-        x:-100,
-        opacity:0,
-        stagger:0.5,
-        scrollTrigger:{
-          trigger:reff.current,
-          start:"top 80%",
-          end:"bottom 50%",
-        }
-    })},[])
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 684px)",()=>{
+      gsap.from(reff.current.children,{
+      x:-100,
+      opacity:0,
+      stagger:0.5,
+      scrollTrigger:{
+        trigger:reff.current,
+        start:"top 60%",
+        end:"bottom 80%",
+      }
+    })
+    })
+    mm.add("(max-width: 683px)",()=>{
+      
+    })
+  },[])
   return (
     <div ref={reff} className="relative min-h-full max-md:text-center flex gap-8 flex-col p-16 w-full">
       <Image className="absolute left-0 max-md:top-11 top-96 z-0" src={"/bg/pattern-l.svg"} height={150} width={150} />
       <Image className="absolute right-0 top-64 z-0" src={"/bg/pattern-r.svg"} height={300} width={300} />
-        <div className="flex gap-4 flex-col">
-        <div className="flex  flex-col">
+        <div className="flex h-max gap-4 flex-col">
+        <div className="flex flex-col">
           <p className="headin text-white">Skills</p>
           <p className="headin text-4xl text-blue-700 font-bold">My Skills</p>
         </div>

@@ -2,11 +2,11 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useRef } from "react";   
+import { useEffect, useRef } from "react";   
 gsap.registerPlugin(ScrollTrigger);
 const Second = () => {
     const lineRef = useRef()
-    useGSAP(()=>{
+    useEffect(()=>{
         gsap.to(lineRef.current.children, 
             {
               color:'white',
